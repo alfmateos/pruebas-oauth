@@ -40,10 +40,12 @@ def callback():
     callback URL. With this redirection comes an authorization code included
     in the redirect URL. We will use that to obtain an access token.
     """
+    print(request.url)
+    callbackurl="https://pruebas-oauth.herokuapp.com/"
     time.sleep(2)
     github = OAuth2Session(client_id, state=session['oauth_state'])
     token = github.fetch_token(token_url, client_secret=client_secret,
-                               authorization_response=request.url)
+                               authorization_response=callbackurl)
 
     # At this point you can fetch protected resources but lets save
     # the token and show how this is done from a persisted token
