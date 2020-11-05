@@ -12,6 +12,7 @@ client_id = "3f66da973fbedbc5eb6d"
 client_secret = "6cbb2e060ffeebf33789c9a1768c814bb937c6b7"
 authorization_base_url = 'https://github.com/login/oauth/authorize'
 token_url = 'https://github.com/login/oauth/access_token'
+callback_url = 'http://pruebas-oauth.herokuapp.com/callback'
 
 
 @app.route("/")
