@@ -4,6 +4,7 @@ from flask.json import jsonify
 import os, time
 
 app = Flask(__name__)
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 
 # This information is obtained upon registration of a new GitHub
