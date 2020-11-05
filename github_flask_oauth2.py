@@ -5,7 +5,7 @@ import os, time
 
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 app = Flask(__name__)
-
+app.secret_key = os.urandom(24)
 
 # This information is obtained upon registration of a new GitHub
 client_id = "3f66da973fbedbc5eb6d"
