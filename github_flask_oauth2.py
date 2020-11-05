@@ -44,7 +44,7 @@ def callback():
     time.sleep(2)
     github = OAuth2Session(client_id, state=session['oauth_state'])
     token = github.fetch_token(token_url, client_secret=client_secret,
-                               authorization_response=request.url)
+                               authorization_response=callback_url)
 
     # At this point you can fetch protected resources but lets save
     # the token and show how this is done from a persisted token
