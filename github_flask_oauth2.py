@@ -12,7 +12,6 @@ client_id = "3f66da973fbedbc5eb6d"
 client_secret = "6cbb2e060ffeebf33789c9a1768c814bb937c6b7"
 authorization_base_url = 'https://github.com/login/oauth/authorize'
 token_url = 'https://github.com/login/oauth/access_token'
-callback_url = 'http://pruebas-oauth.herokuapp.com/callback'
 
 
 @app.route("/")
@@ -44,7 +43,7 @@ def callback():
     time.sleep(2)
     github = OAuth2Session(client_id, state=session['oauth_state'])
     token = github.fetch_token(token_url, client_secret=client_secret,
-                               authorization_response=callback_url)
+                               authorization_response=request.url)
 
     # At this point you can fetch protected resources but lets save
     # the token and show how this is done from a persisted token
